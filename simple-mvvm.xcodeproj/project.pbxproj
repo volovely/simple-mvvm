@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		30CBFF5327AAE61A0027C97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF5227AAE61A0027C97C /* AppDelegate.swift */; };
 		30CBFF5527AAE61A0027C97C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF5427AAE61A0027C97C /* SceneDelegate.swift */; };
-		30CBFF5727AAE61A0027C97C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF5627AAE61A0027C97C /* ViewController.swift */; };
 		30CBFF5A27AAE61A0027C97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF5827AAE61A0027C97C /* Main.storyboard */; };
 		30CBFF5C27AAE61C0027C97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF5B27AAE61C0027C97C /* Assets.xcassets */; };
 		30CBFF5F27AAE61C0027C97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF5D27AAE61C0027C97C /* LaunchScreen.storyboard */; };
+		30CBFF6827AAE73E0027C97C /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF6727AAE73E0027C97C /* AppStep.swift */; };
+		30CBFF6D27AAE7EF0027C97C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF6B27AAE7EF0027C97C /* LoginViewController.swift */; };
+		30CBFF6E27AAE7EF0027C97C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF6C27AAE7EF0027C97C /* LoginViewController.xib */; };
+		30CBFF7127AAE88B0027C97C /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF7027AAE88B0027C97C /* LoginFlow.swift */; };
 		B98CA256E8F165B40AFB902C /* Pods_simple_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC4A3EB9232588E767FAB04 /* Pods_simple_mvvm.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +23,14 @@
 		30CBFF4F27AAE61A0027C97C /* simple-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CBFF5227AAE61A0027C97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30CBFF5427AAE61A0027C97C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		30CBFF5627AAE61A0027C97C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		30CBFF5927AAE61A0027C97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30CBFF5B27AAE61C0027C97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30CBFF5E27AAE61C0027C97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30CBFF6027AAE61C0027C97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30CBFF6727AAE73E0027C97C /* AppStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
+		30CBFF6B27AAE7EF0027C97C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		30CBFF6C27AAE7EF0027C97C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		30CBFF7027AAE88B0027C97C /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		3AC4A3EB9232588E767FAB04 /* Pods_simple_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		701F3E2292DB1E509C11ABF7 /* Pods-simple-mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-mvvm.debug.xcconfig"; path = "Target Support Files/Pods-simple-mvvm/Pods-simple-mvvm.debug.xcconfig"; sourceTree = "<group>"; };
 		E58CA65B4694A87EE9D5D671 /* Pods-simple-mvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-mvvm.release.xcconfig"; path = "Target Support Files/Pods-simple-mvvm/Pods-simple-mvvm.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,15 +69,50 @@
 		30CBFF5127AAE61A0027C97C /* simple-mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				30CBFF6927AAE74D0027C97C /* Login */,
+				30CBFF6627AAE7210027C97C /* Navigation */,
 				30CBFF5227AAE61A0027C97C /* AppDelegate.swift */,
 				30CBFF5427AAE61A0027C97C /* SceneDelegate.swift */,
-				30CBFF5627AAE61A0027C97C /* ViewController.swift */,
 				30CBFF5827AAE61A0027C97C /* Main.storyboard */,
 				30CBFF5B27AAE61C0027C97C /* Assets.xcassets */,
 				30CBFF5D27AAE61C0027C97C /* LaunchScreen.storyboard */,
 				30CBFF6027AAE61C0027C97C /* Info.plist */,
 			);
 			path = "simple-mvvm";
+			sourceTree = "<group>";
+		};
+		30CBFF6627AAE7210027C97C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				30CBFF6F27AAE8190027C97C /* Flows */,
+				30CBFF6727AAE73E0027C97C /* AppStep.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		30CBFF6927AAE74D0027C97C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				30CBFF6A27AAE7630027C97C /* ViewControllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		30CBFF6A27AAE7630027C97C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				30CBFF6B27AAE7EF0027C97C /* LoginViewController.swift */,
+				30CBFF6C27AAE7EF0027C97C /* LoginViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		30CBFF6F27AAE8190027C97C /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				30CBFF7027AAE88B0027C97C /* LoginFlow.swift */,
+			);
+			path = Flows;
 			sourceTree = "<group>";
 		};
 		AB826148612F5F2D30F2BAE5 /* Frameworks */ = {
@@ -88,7 +129,6 @@
 				701F3E2292DB1E509C11ABF7 /* Pods-simple-mvvm.debug.xcconfig */,
 				E58CA65B4694A87EE9D5D671 /* Pods-simple-mvvm.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CBFF6E27AAE7EF0027C97C /* LoginViewController.xib in Resources */,
 				30CBFF5F27AAE61C0027C97C /* LaunchScreen.storyboard in Resources */,
 				30CBFF5C27AAE61C0027C97C /* Assets.xcassets in Resources */,
 				30CBFF5A27AAE61A0027C97C /* Main.storyboard in Resources */,
@@ -207,7 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30CBFF5727AAE61A0027C97C /* ViewController.swift in Sources */,
+				30CBFF7127AAE88B0027C97C /* LoginFlow.swift in Sources */,
+				30CBFF6D27AAE7EF0027C97C /* LoginViewController.swift in Sources */,
+				30CBFF6827AAE73E0027C97C /* AppStep.swift in Sources */,
 				30CBFF5327AAE61A0027C97C /* AppDelegate.swift in Sources */,
 				30CBFF5527AAE61A0027C97C /* SceneDelegate.swift in Sources */,
 			);
