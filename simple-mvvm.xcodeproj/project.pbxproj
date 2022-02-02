@@ -13,6 +13,7 @@
 		30CBFF5A27AAE61A0027C97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF5827AAE61A0027C97C /* Main.storyboard */; };
 		30CBFF5C27AAE61C0027C97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF5B27AAE61C0027C97C /* Assets.xcassets */; };
 		30CBFF5F27AAE61C0027C97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF5D27AAE61C0027C97C /* LaunchScreen.storyboard */; };
+		B98CA256E8F165B40AFB902C /* Pods_simple_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC4A3EB9232588E767FAB04 /* Pods_simple_mvvm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		30CBFF5B27AAE61C0027C97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30CBFF5E27AAE61C0027C97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30CBFF6027AAE61C0027C97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AC4A3EB9232588E767FAB04 /* Pods_simple_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		701F3E2292DB1E509C11ABF7 /* Pods-simple-mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-mvvm.debug.xcconfig"; path = "Target Support Files/Pods-simple-mvvm/Pods-simple-mvvm.debug.xcconfig"; sourceTree = "<group>"; };
+		E58CA65B4694A87EE9D5D671 /* Pods-simple-mvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-mvvm.release.xcconfig"; path = "Target Support Files/Pods-simple-mvvm/Pods-simple-mvvm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98CA256E8F165B40AFB902C /* Pods_simple_mvvm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				30CBFF5127AAE61A0027C97C /* simple-mvvm */,
 				30CBFF5027AAE61A0027C97C /* Products */,
+				C54EC68BCF85F77C1B29C30C /* Pods */,
+				AB826148612F5F2D30F2BAE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = "simple-mvvm";
 			sourceTree = "<group>";
 		};
+		AB826148612F5F2D30F2BAE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AC4A3EB9232588E767FAB04 /* Pods_simple_mvvm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C54EC68BCF85F77C1B29C30C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				701F3E2292DB1E509C11ABF7 /* Pods-simple-mvvm.debug.xcconfig */,
+				E58CA65B4694A87EE9D5D671 /* Pods-simple-mvvm.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30CBFF6327AAE61C0027C97C /* Build configuration list for PBXNativeTarget "simple-mvvm" */;
 			buildPhases = (
+				8A906168F5C273E0FA2C217A /* [CP] Check Pods Manifest.lock */,
 				30CBFF4B27AAE61A0027C97C /* Sources */,
 				30CBFF4C27AAE61A0027C97C /* Frameworks */,
 				30CBFF4D27AAE61A0027C97C /* Resources */,
+				A93FB6498ED3D18AB481CA2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A906168F5C273E0FA2C217A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-simple-mvvm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A93FB6498ED3D18AB481CA2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simple-mvvm/Pods-simple-mvvm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simple-mvvm/Pods-simple-mvvm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-simple-mvvm/Pods-simple-mvvm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30CBFF4B27AAE61A0027C97C /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		30CBFF6427AAE61C0027C97C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 701F3E2292DB1E509C11ABF7 /* Pods-simple-mvvm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		30CBFF6527AAE61C0027C97C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E58CA65B4694A87EE9D5D671 /* Pods-simple-mvvm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
