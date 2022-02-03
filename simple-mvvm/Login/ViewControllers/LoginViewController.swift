@@ -35,6 +35,10 @@ class LoginViewController: UIViewController {
       .bind(to: viewModel.input.onPasswordChanged)
       .disposed(by: disposeBag)
 
+    btnSend.rx.tap
+      .bind(to: viewModel.input.onSendAction)
+      .disposed(by: disposeBag)
+
     viewModel.output.isEmailValid
       .drive(emailValidationView.rx.isValid)
       .disposed(by: disposeBag)

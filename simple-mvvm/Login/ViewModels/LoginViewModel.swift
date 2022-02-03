@@ -16,6 +16,7 @@ class LoginViewModel: ViewModel, Stepper {
   struct Input {
     let onEmailChanged: AnyObserver<String>
     let onPasswordChanged: AnyObserver<String>
+    let onSendAction: AnyObserver<Void>
   }
 
   struct Output {
@@ -26,6 +27,7 @@ class LoginViewModel: ViewModel, Stepper {
   // Input
   private let email = BehaviorSubject(value: "")
   private let password = BehaviorSubject(value: "")
+  private let sendAction = PublishSubject<Void>()
 
   // Output
   private let isEmailValid = BehaviorSubject(value: true)
@@ -34,7 +36,8 @@ class LoginViewModel: ViewModel, Stepper {
   init() {
     input = Input(
       onEmailChanged: email.asObserver(),
-      onPasswordChanged: password.asObserver()
+      onPasswordChanged: password.asObserver(),
+      onSendAction: sendAction.asObserver()
     )
     output = Output(
       isEmailValid: isEmailValid.asDriver(onErrorJustReturn: false),
@@ -50,11 +53,46 @@ class LoginViewModel: ViewModel, Stepper {
       .bind(to: isEmailValid)
       .disposed(by: disposeBag)
 
-    Observable.combineLatest(isEmailValid, password)
-      .debug()
+    Observable
+      .combineLatest(isEmailValid, password)
       .map { isEmailValid, password in isEmailValid && !password.isEmpty}
-      .debug()
       .bind(to: isSendButtonEnabled)
       .disposed(by: disposeBag)
+
+    sendAction
+      .withLatestFrom(
+        Observable.combineLatest(email, password, isEmailValid)
+      )
+      .filter { _, _, isEmailValid in isEmailValid }
+      .bind { [weak self] email, password, _ in
+        guard let self = self else { return }
+
+        self.sendData(
+          email: email,
+          password: password
+        ) { comleted in
+          if comleted {
+            self.steps.accept(AppStep.userIsLoggedIn)
+          } else {
+            print("Something terrible happened")
+          }
+        }
+      }
+      .disposed(by: disposeBag)
+  }
+
+  // MOCK
+  private func sendData(
+    email: String,
+    password: String,
+    comletion: @escaping (Bool) -> Void
+  ) {
+    DispatchQueue.global().async {
+      sleep(5)
+      print("email: \(email), password: \(password)")
+      DispatchQueue.main.async {
+        comletion(false)
+      }
+    }
   }
 }

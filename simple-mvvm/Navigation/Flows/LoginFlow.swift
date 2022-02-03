@@ -21,6 +21,8 @@ class LoginFlow: Flow {
     switch step {
     case .loginIsRequired:
       return navigateToLogin()
+    case .userIsLoggedIn:
+      return showSuccessAlert()
     default:
       return .none
     }
@@ -41,5 +43,17 @@ class LoginFlow: Flow {
         withNextStepper: loginViewModel
       )
     )
+  }
+
+  private func showSuccessAlert() -> FlowContributors {
+    let alert = UIAlertController(
+      title: "Login Success",
+      message: "User is successfully logged in",
+      preferredStyle: .alert
+    )
+
+    rootViewController.present(alert, animated: true, completion: nil)
+
+    return .none
   }
 }
