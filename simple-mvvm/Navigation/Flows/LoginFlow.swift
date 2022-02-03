@@ -30,13 +30,13 @@ class LoginFlow: Flow {
 
   private func navigateToLogin() -> FlowContributors {
     window.rootViewController = rootViewController
+    window.makeKeyAndVisible()
 
     let loginViewModel = LoginViewModel()
     let loginVc = LoginViewController()
     loginVc.viewModel = loginViewModel
 
     rootViewController.viewControllers = [loginVc]
-    window.makeKeyAndVisible()
     return .one(
       flowContributor: .contribute(
         withNextPresentable: loginVc,
