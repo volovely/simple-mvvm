@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="btnSend" destination="CO3-12-Ht9" id="HeA-0W-3sm"/>
                 <outlet property="emailValidationView" destination="Y8P-R1-bVx" id="EpR-rw-xGp"/>
-                <outlet property="txtEmai" destination="XfM-fz-asA" id="g2a-A6-rmB"/>
+                <outlet property="txtEmail" destination="XfM-fz-asA" id="g2a-A6-rmB"/>
                 <outlet property="txtPassword" destination="VHq-nw-dh4" id="hR6-fq-B0j"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,7 +35,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8P-R1-bVx">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8P-R1-bVx" customClass="ValidationView" customModule="simple_mvvm" customModuleProvider="target">
                     <rect key="frame" x="340" y="244" width="32" height="34"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>

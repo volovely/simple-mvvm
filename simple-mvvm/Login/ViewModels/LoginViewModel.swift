@@ -40,5 +40,21 @@ class LoginViewModel: ViewModel, Stepper {
       isEmailValid: isEmailValid.asDriver(onErrorJustReturn: false),
       isSendButtonEnabled: isSendButtonEnabled.asDriver(onErrorJustReturn: false)
     )
+
+    initBindings()
+  }
+
+  private func initBindings() {
+    email
+      .map { email -> Bool in email.contains("@") }
+      .bind(to: isEmailValid)
+      .disposed(by: disposeBag)
+
+    Observable.combineLatest(isEmailValid, password)
+      .debug()
+      .map { isEmailValid, password in isEmailValid && !password.isEmpty}
+      .debug()
+      .bind(to: isSendButtonEnabled)
+      .disposed(by: disposeBag)
   }
 }

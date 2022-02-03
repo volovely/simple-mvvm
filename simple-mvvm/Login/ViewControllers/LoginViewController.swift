@@ -1,14 +1,17 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
+  private let disposeBag = DisposeBag()
 
   var viewModel: LoginViewModel!
 
-  @IBOutlet weak var txtEmai: UITextField!
+  @IBOutlet weak var txtEmail: UITextField!
   @IBOutlet weak var txtPassword: UITextField!
   @IBOutlet weak var btnSend: UIButton!
-  @IBOutlet weak var emailValidationView: UIView!
-  
+  @IBOutlet weak var emailValidationView: ValidationView!
+
   init() {
     super.init(nibName: String(describing: LoginViewController.self), bundle: .main)
   }
@@ -18,5 +21,26 @@ class LoginViewController: UIViewController {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
+    initBindings()
+  }
+
+  private func initBindings() {
+    txtEmail.rx.text
+      .orEmpty
+      .bind(to: viewModel.input.onEmailChanged)
+      .disposed(by: disposeBag)
+
+    txtPassword.rx.text
+      .orEmpty
+      .bind(to: viewModel.input.onPasswordChanged)
+      .disposed(by: disposeBag)
+
+    viewModel.output.isEmailValid
+      .drive(emailValidationView.rx.isValid)
+      .disposed(by: disposeBag)
+
+    viewModel.output.isSendButtonEnabled
+      .drive(btnSend.rx.isEnabled)
+      .disposed(by: disposeBag)
   }
 }
