@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30344E4B27ABE02500C74CCC /* ValidationView+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30344E4A27ABE02500C74CCC /* ValidationView+Reactive.swift */; };
 		30CBFF5327AAE61A0027C97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF5227AAE61A0027C97C /* AppDelegate.swift */; };
 		30CBFF5527AAE61A0027C97C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBFF5427AAE61A0027C97C /* SceneDelegate.swift */; };
 		30CBFF5C27AAE61C0027C97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CBFF5B27AAE61C0027C97C /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30344E4A27ABE02500C74CCC /* ValidationView+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValidationView+Reactive.swift"; sourceTree = "<group>"; };
 		30CBFF4F27AAE61A0027C97C /* simple-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CBFF5227AAE61A0027C97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30CBFF5427AAE61A0027C97C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30344E4927ABDFE800C74CCC /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				30344E4A27ABE02500C74CCC /* ValidationView+Reactive.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		30CBFF4627AAE61A0027C97C = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		30CBFF6927AAE74D0027C97C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				30344E4927ABDFE800C74CCC /* UIComponents */,
 				30CBFF7227ABC9930027C97C /* ViewModels */,
 				30CBFF6A27AAE7630027C97C /* ViewControllers */,
 			);
@@ -270,6 +281,7 @@
 				30CBFF6D27AAE7EF0027C97C /* LoginViewController.swift in Sources */,
 				30CBFF7427ABC9B70027C97C /* LoginViewModel.swift in Sources */,
 				30CBFF6827AAE73E0027C97C /* AppStep.swift in Sources */,
+				30344E4B27ABE02500C74CCC /* ValidationView+Reactive.swift in Sources */,
 				30CBFF5327AAE61A0027C97C /* AppDelegate.swift in Sources */,
 				30CBFF5527AAE61A0027C97C /* SceneDelegate.swift in Sources */,
 				30CBFF7727ABCA290027C97C /* ViewModel.swift in Sources */,
@@ -419,7 +431,6 @@
 				INFOPLIST_FILE = "simple-mvvm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,7 +459,6 @@
 				INFOPLIST_FILE = "simple-mvvm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
