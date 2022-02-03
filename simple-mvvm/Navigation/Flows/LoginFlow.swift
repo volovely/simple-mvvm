@@ -51,6 +51,8 @@ class LoginFlow: Flow {
       message: "User is successfully logged in",
       preferredStyle: .alert
     )
+    let dismissAction = UIAlertAction(title: "OK", style: .default)
+    alert.addAction(dismissAction)
 
     rootViewController.present(alert, animated: true, completion: nil)
 

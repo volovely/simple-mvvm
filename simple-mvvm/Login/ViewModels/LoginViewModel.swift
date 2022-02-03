@@ -91,7 +91,7 @@ class LoginViewModel: ViewModel, Stepper {
       sleep(5)
       print("email: \(email), password: \(password)")
       DispatchQueue.main.async {
-        comletion(false)
+        comletion(true)
       }
     }
   }
